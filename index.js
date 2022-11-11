@@ -1,17 +1,4 @@
-let claseRPG = 
-  prompt(
-    "Elige una clase para comenzar tu aventura: \n Guerrero \n Mago \n Tirador"
-  )
-; 
-
-let clases = [prompt(
-    "Elige una clase para comenzar tu aventura: \n Guerrero \n Mago \n Tirador"
-  ), prompt(
-    "Elige una clase para comenzar tu aventura: \n Guerrero \n Mago \n Tirador"
-  ), prompt(
-    "Elige una clase para comenzar tu aventura: \n Guerrero \n Mago \n Tirador"
-  )];
-
+let clase = prompt("Elige una clase para comenzar tu aventura: \n Guerrero \n Mago \n Tirador");
 
 alert("A continuación, procederás a preparar tu equipo");
 let armaG;
@@ -21,9 +8,8 @@ let armaT;
 const personajes = [];
 
 class Personaje {
-  constructor(clase, /*arma,*/ vida, poder) {
+  constructor(clase, vida, poder) {
     this.clase = clase;
-    //this.arma = arma;
     this.vida = vida;
     this.poder = poder;
   }
@@ -47,45 +33,22 @@ class Personaje {
   }
 }
 
-
-const guerrero = new Personaje("Guerrero", 100, 80);
-personajes.push(guerrero);
-
-const mago = new Personaje(clases[1], 85, 90);
-personajes.push(mago);
-
-const tirador = new Personaje(clases[2], 75, 95);
-personajes.push(tirador);
-
-guerrero.elegirArma()
-mago.elegirArma()
-tirador.elegirArma()
+if(clase === "Guerrero"){
+  const personaje1 = new Personaje(clase, 100, 80);
+  personajes.push(personaje1);
+  personaje1.elegirArma()
+} else if(clase === "Mago"){
+  const personaje2 = new Personaje(clase, 85, 90);
+  personajes.push(personaje2);
+  personaje2.elegirArma()
+} else{
+  const personaje3 = new Personaje(clase, 75, 95);
+  personajes.push(personaje3);
+  personaje3.elegirArma()
+}
 
 console.log(personajes)
 
-
-
-/*
-
-  if (clase === guerrero.clase) {
-    alert("A continuación, procederás a preparar tu equipo");
-    armaG = prompt(
-      "Selecciona tu arma inicial: \n Espada \n Lanza \n Hacha"
-    );
-  } else if (clase === mago.clase) {
-    alert("A continuación, procederás a preparar tu equipo");
-    armaM = prompt(
-      "Selecciona tu arma inicial: \n Varita \n Báculo \n Libro"
-    );
-  } else if (clase === tirador.clase) {
-    alert("A continuación, procederás a preparar tu equipo");
-    armaT = prompt(
-      "Selecciona tu arma inicial: \n aArco \n bResortera \n  Ballesta"
-    );
-  } else {
-    alert("Por favor, selecciona una opción adecuada");
-  }
-*/
 
 let aventura = alert("¡Comienza tu aventura!");
 
